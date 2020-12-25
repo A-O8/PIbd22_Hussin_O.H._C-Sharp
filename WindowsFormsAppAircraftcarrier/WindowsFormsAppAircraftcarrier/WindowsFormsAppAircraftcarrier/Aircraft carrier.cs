@@ -9,17 +9,7 @@ namespace WindowsFormsAppAircraftcarrier
     class Aircraft_carrier : Warship
 
     {
-        public enum Direction
-        {
-            Up,
-
-            Down,
-
-            Left,
-
-            Right
-        }
-
+        
         /// <summary>
         /// Дополнительный цвет
         /// </summary>
@@ -47,21 +37,14 @@ namespace WindowsFormsAppAircraftcarrier
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(DopColor);
             g.DrawRectangle(pen, _startPosX + 40, _startPosY + 30, 140, 40);
-
             g.FillRectangle(Brushes.Coral, _startPosX + 40, _startPosY + 30, 140, 40);
-
-
             g.DrawRectangle(pen, _startPosX + 80, _startPosY + 35, 150, 30);
-
             g.FillRectangle(Brushes.Coral, _startPosX + 80, _startPosY + 35, 150, 30);
-
             g.DrawEllipse(pen, _startPosX + 190, _startPosY + 13, 35, 80);
             g.FillRectangle(Brushes.Teal, _startPosX + 15, _startPosY + 15, 185, 72);
-
             base.Drawship(g);
             g.FillEllipse(Brushes.Teal, _startPosX + 60, _startPosY + 80, 150, 30);
             g.FillRectangle(Brushes.Teal, _startPosX + 40, _startPosY + 81, 40, 20);
-
             if (Plaines)
             {
                 g.DrawEllipse(pen, _startPosX + 45, _startPosY + 37, 25, 25);
@@ -89,16 +72,10 @@ namespace WindowsFormsAppAircraftcarrier
                 g.FillEllipse(Brushes.Coral, _startPosX + 70, _startPosY + 87, 25, 10);
                 g.FillEllipse(Brushes.Coral, _startPosX + 80, _startPosY + 83, 5, 18);
 
-
             }
-
-           
         }
 
     }
-
-    
-
 }
 
 
