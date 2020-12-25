@@ -31,10 +31,6 @@ namespace WindowsFormsAppAircraftcarrier
             Random rnd = new Random();
             ship = new Aircraft_carrier(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
             ship.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxAircraft_carrier.Width, pictureBoxAircraft_carrier.Height);
-
-
-
-
             Draw();
 
 
