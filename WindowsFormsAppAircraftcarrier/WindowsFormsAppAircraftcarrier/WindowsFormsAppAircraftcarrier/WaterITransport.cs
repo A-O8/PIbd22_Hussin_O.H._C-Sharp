@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAircraftcarrier
 {
-    interface WaterITransport
+   public interface WaterITransport
     {
         void SetPosition(int x, int y, int width, int height);
         void MoveShip(Direction direction);
@@ -15,7 +15,5 @@ namespace WindowsFormsAppAircraftcarrier
         void Drawship(Graphics g);
 
     }
-
-
 }
 

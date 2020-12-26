@@ -12,8 +12,7 @@ namespace WindowsFormsAppAircraftcarrier
 {
     public partial class FormAircraft_carrier : Form
     {
-
-        private WaterITransport ship;
+        private  WaterITransport ship;
         public FormAircraft_carrier()
         {
             InitializeComponent();
@@ -25,21 +24,18 @@ namespace WindowsFormsAppAircraftcarrier
             ship.Drawship(gr);
             pictureBoxAircraft_carrier.Image = bmp;
         }
-
+        public void SetWarship(WaterITransport ship)
+        {
+            this.Warship = Warship;
+            Draw();
+        }
         private void Aircraftcarrier_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             ship = new Aircraft_carrier(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
             ship.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxAircraft_carrier.Width, pictureBoxAircraft_carrier.Height);
-
-
-
-
             Draw();
-
-
         }
-
         private void MoveAircraftcarrier_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
@@ -60,7 +56,6 @@ namespace WindowsFormsAppAircraftcarrier
             }
             Draw();
         }
-
         private void Warship_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
