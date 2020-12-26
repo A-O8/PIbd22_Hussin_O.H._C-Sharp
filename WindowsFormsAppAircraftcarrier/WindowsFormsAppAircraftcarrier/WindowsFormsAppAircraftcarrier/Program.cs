@@ -16,7 +16,7 @@ namespace WindowsFormsAppAircraftcarrier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAircraft_carrier());
+            Application.Run(new FormParking());
         }
     }
 }

@@ -9,22 +9,16 @@ namespace WindowsFormsAppAircraftcarrier
 {
    public class Warship : Ship
     {
-
         protected readonly int АвианосецWidth = 100;
-
         protected readonly int АвианосецHeight = 100;
         protected double chWidth = 1.1;
         protected double chHeight = 3.2;
-
         public Warship(int maxSpeed, float weight, Color mainColor)
         {
-
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-
         }
-
         protected Warship(int maxSpeed, float weight, Color mainColor, int АвианосецWidth, int АвианосецHeight)
         {
             MaxSpeed = maxSpeed;
@@ -74,30 +68,23 @@ namespace WindowsFormsAppAircraftcarrier
         public override void Drawship(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
+
             Brush brRed = new SolidBrush(Color.Red);
-            g.FillEllipse(brRed, _startPosX + 190, _startPosY + 13, 35, 80);
-            // dbadh
-            g.FillEllipse(Brushes.Coral, _startPosX + 95, _startPosY - 2, 40, 30);
+            g.FillEllipse(brRed, _startPosX + 270, _startPosY + 12, 35, 120);
 
-            g.FillEllipse(Brushes.Coral, _startPosX + 110, _startPosY - 30, 10, 30);
-            g.FillRectangle(Brushes.Teal, _startPosX + 30, _startPosY + 15, 150, 72);
-            g.FillEllipse(Brushes.Teal, _startPosX + 30, _startPosY + 20, 285, 62);
-            g.FillEllipse(Brushes.Goldenrod, _startPosX + 170, _startPosY + 35, 120, 30);
-
-            g.FillRectangle(Brushes.Goldenrod, _startPosX + 40, _startPosY + 30, 140, 40);
-            g.FillRectangle(Brushes.Goldenrod, _startPosX + 80, _startPosY + 35, 150, 30);
-            g.FillRectangle(Brushes.Maroon, _startPosX + 190, _startPosY + 38, 10, 25);
-
-            g.FillRectangle(Brushes.Maroon, _startPosX + 170, _startPosY + 38, 10, 25);
-            g.FillRectangle(Brushes.Maroon, _startPosX + 150, _startPosY + 38, 10, 25);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY + 9, 8, 8);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 125, _startPosY + 9, 8, 8);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 97, _startPosY + 9, 8, 8);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY - 2, 8, 8);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 125, _startPosY - 2, 8, 8);
-            g.FillEllipse(Brushes.Sienna, _startPosX + 97, _startPosY - 2, 8, 8);
+            g.FillRectangle(Brushes.Teal, _startPosX + 2, _startPosY + 20, 240, 102);
+            PointF[] sours =
+                     {
+            new PointF(_startPosX, _startPosY+50),
+            new PointF(_startPosX + 160, _startPosY + 20),
+            new PointF(_startPosX + 250, _startPosY + 20),
+            new PointF(_startPosX + 390, _startPosY + 70),
+            new PointF(_startPosX + 250, _startPosY + 120),
+            new PointF(_startPosX + 160, _startPosY + 120),
+           new PointF(_startPosX, _startPosY+90),
+             };
+            g.FillPolygon(new SolidBrush(MainColor), sours);
 
         }
     }
 }
-
