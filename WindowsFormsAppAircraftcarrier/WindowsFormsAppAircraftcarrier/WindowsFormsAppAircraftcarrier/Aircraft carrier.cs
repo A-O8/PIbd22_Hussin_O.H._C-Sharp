@@ -62,6 +62,12 @@ namespace WindowsFormsAppAircraftcarrier
             }
         }
 
+
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
+
     }
 
 }

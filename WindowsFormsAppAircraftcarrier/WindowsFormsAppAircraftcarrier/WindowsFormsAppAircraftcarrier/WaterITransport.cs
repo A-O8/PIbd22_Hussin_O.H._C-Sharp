@@ -13,7 +13,7 @@ namespace WindowsFormsAppAircraftcarrier
         void MoveShip(Direction direction);
 
         void Drawship(Graphics g);
-
+        void SetMainColor(Color color);
     }
 }
 

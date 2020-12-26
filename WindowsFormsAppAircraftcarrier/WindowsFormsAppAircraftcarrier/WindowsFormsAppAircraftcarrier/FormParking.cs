@@ -41,45 +41,27 @@ namespace WindowsFormsAppAircraftcarrier
             parkingCollection[listBoxParkings.SelectedItem.ToString()].Draw(gr);
             boxParkimg.Image = bmp;
         }
-        private void Aircraftcamier_Click(object sender, EventArgs e)
-        { 
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var ship = new Aircraft_carrier(100, 1000, dialog.Color, dialogDop.Color, true, true);
-                        if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + ship)
-                        {
-                            Draw();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Парковка переполнена");
-                        }
-                    }
-                }
-            }
-
             private void WArship_Click(object sender, EventArgs e)
             {
-
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            var formCarConfig = new FormCarConfig();
+            formCarConfig.AddEvent(AddAircraftcarrier);
+            formCarConfig.Show();
+        }
+        private void AddAircraftcarrier(WaterITransport Ship)
+        {
+            if (Ship != null && listBoxParkings.SelectedIndex > -1)
             {
-                var ship = new Warship(100, 1000, dialog.Color);
-
-                if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + ship)
+                if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + Ship)
                 {
                     Draw();
                 }
                 else
                 {
-                    MessageBox.Show("Парковка переполнена");
+                    MessageBox.Show("поставить не удалось");
                 }
             }
         }
+
         private void bTake_Click(object sender, EventArgs e)
             {
 
@@ -97,12 +79,10 @@ namespace WindowsFormsAppAircraftcarrier
                 Draw();
             }
         }
-
         private void listBoxParkings_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
         }
-
         private void DelParking_Click(object sender, EventArgs e)
         {
             if (listBoxParkings.SelectedIndex > -1)
