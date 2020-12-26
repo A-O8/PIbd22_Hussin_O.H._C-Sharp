@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Warship = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.pictureBoxAircraft_carrier = new System.Windows.Forms.PictureBox();
+            this.Aircraftcarrier = new System.Windows.Forms.Button();
+            this.Aircraftcamier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAircraft_carrier)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Warship
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 46);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "СОЗАТЬ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Aircraftcarrier_Click);
+            this.Warship.Location = new System.Drawing.Point(0, 0);
+            this.Warship.Name = "Warship";
+            this.Warship.Size = new System.Drawing.Size(104, 46);
+            this.Warship.TabIndex = 1;
+            this.Warship.Text = "Warship";
+            this.Warship.UseVisualStyleBackColor = true;
+            this.Warship.Click += new System.EventHandler(this.Warship_Click);
             // 
             // buttonRight
             // 
@@ -108,16 +110,37 @@
             this.pictureBoxAircraft_carrier.TabIndex = 0;
             this.pictureBoxAircraft_carrier.TabStop = false;
             // 
+            // Aircraftcarrier
+            // 
+            this.Aircraftcarrier.Location = new System.Drawing.Point(123, 7);
+            this.Aircraftcarrier.Name = "Aircraftcarrier";
+            this.Aircraftcarrier.Size = new System.Drawing.Size(93, 38);
+            this.Aircraftcarrier.TabIndex = 2;
+            this.Aircraftcarrier.Text = "Aircraftcarrier";
+            this.Aircraftcarrier.UseVisualStyleBackColor = true;
+            this.Aircraftcarrier.Click += new System.EventHandler(this.Aircraftcarrier_Click);
+            // 
+            // Aircraftcamier
+            // 
+            this.Aircraftcamier.Location = new System.Drawing.Point(110, 0);
+            this.Aircraftcamier.Name = "Aircraftcamier";
+            this.Aircraftcamier.Size = new System.Drawing.Size(95, 48);
+            this.Aircraftcamier.TabIndex = 2;
+            this.Aircraftcamier.Text = "Aircraftcarrier";
+            this.Aircraftcamier.UseVisualStyleBackColor = true;
+            this.Aircraftcamier.Click += new System.EventHandler(this.Aircraftcarrier_Click);
+            // 
             // FormAircraft_carrier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Aircraftcamier);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonDown);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Warship);
             this.Controls.Add(this.pictureBoxAircraft_carrier);
             this.Name = "FormAircraft_carrier";
             this.Text = "FormAircraft_carrier";
@@ -129,10 +152,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxAircraft_carrier;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Warship;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.Button Aircraftcarrier;
+        private System.Windows.Forms.Button Aircraftcamier;
     }
 }
