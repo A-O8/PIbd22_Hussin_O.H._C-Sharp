@@ -61,15 +61,11 @@ namespace WindowsFormsAppAircraftcarrier
                 g.FillEllipse(Brushes.Coral, _startPosX + 80, _startPosY + 83, 5, 18);
             }
         }
-
-
         public void SetDopColor(Color color)
         {
             DopColor = color;
         }
-
     }
-
 }
 
 
