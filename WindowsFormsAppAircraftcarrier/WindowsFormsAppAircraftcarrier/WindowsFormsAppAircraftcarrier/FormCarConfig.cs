@@ -17,7 +17,7 @@ namespace WindowsFormsAppAircraftcarrier
         public FormCarConfig()
         {
             InitializeComponent();
-            buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
+            Cancel.Click += (object sender, EventArgs e) => { Close(); };
             panelColor1.MouseDown += panelColor_MouseDown;
             panelColor2.MouseDown += panelColor_MouseDown;
             panelColor3.MouseDown += panelColor_MouseDown;
@@ -26,17 +26,17 @@ namespace WindowsFormsAppAircraftcarrier
             panelColor6.MouseDown += panelColor_MouseDown;
             panelColor7.MouseDown += panelColor_MouseDown;
             panelColor8.MouseDown += panelColor_MouseDown;
-            buttonAdd.Click += (object sender, EventArgs e) => { eventAddWarship.Invoke(Ship); Close(); };
+            Add.Click += (object sender, EventArgs e) => { eventAddWarship.Invoke(Ship); Close(); };
         }
         private void Drawship()
         {
             if (Ship != null)
             {
-                Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                Bitmap bmp = new Bitmap(display.Width, display.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                Ship.SetPosition(5, 5, pictureBox1.Width, pictureBox1.Height);
+                Ship.SetPosition(5, 5, display.Width, display.Height);
                 Ship.Drawship(gr);
-                pictureBox1.Image = bmp;
+                display.Image = bmp;
             }
         }
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
@@ -54,7 +54,7 @@ namespace WindowsFormsAppAircraftcarrier
                 case "Warship":
                     Ship = new Aircraft_carrier((int)numericUpDownMaxSpeed.Value, (int)numericUpDownWeight.Value, Color.White, Color.Black,
 
-                    checkBoxplaines.Checked, Aerodrom.Checked);
+                    plaines.Checked, Aerodrom.Checked);
 
                     break;
             }
