@@ -51,7 +51,6 @@ namespace WindowsFormsAppAircraftcarrier
         public void setposition(int x, int y, int width, int height)
         {
             _startPosX = x;
-
             _startPosY = y;
             _pictureWidth = width;
             _pictureHeight = height;
@@ -67,7 +66,6 @@ namespace WindowsFormsAppAircraftcarrier
                         _startPosX += step;
                     }
                     break;
-
                 case Direction.Left:
                     if (_startPosX - step > -20)
                     {
@@ -104,7 +102,6 @@ namespace WindowsFormsAppAircraftcarrier
             {
                 g.DrawEllipse(pen, _startPosX + 45, _startPosY + 37, 25, 25);
                 g.DrawEllipse(pen, _startPosX + 160, _startPosY + 45, 10, 10);
-
                 g.DrawRectangle(pen, _startPosX + 55, _startPosY + 33, 140, 33);
                 g.DrawRectangle(pen, _startPosX + 80, _startPosY + 45, 140, 10);
                 g.DrawRectangle(pen, _startPosX + 190, _startPosY + 38, 10, 25);
