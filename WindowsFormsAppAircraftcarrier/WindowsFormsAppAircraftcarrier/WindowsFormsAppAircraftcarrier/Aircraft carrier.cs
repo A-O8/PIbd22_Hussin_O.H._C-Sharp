@@ -32,15 +32,12 @@ namespace WindowsFormsAppAircraftcarrier
         public float Weight { protected set; get; }
         public int MaxSpeed { protected set; get; }
         public Color MainColor { private set; get; }
-
         /// <summary>
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
-
         public bool plaines { private set; get; }
         public bool Aerodrom { private set; get; }
-
         public Aircraft_carrier(int maxSpeed, float weight, Color mainColor, Color dopColor, bool aerodrom, bool sideSpoiler, bool plaines
     )
         {
@@ -50,28 +47,21 @@ namespace WindowsFormsAppAircraftcarrier
             DopColor = dopColor;
             plaines = sideSpoiler;
             Aerodrom = aerodrom;
-
         }
         public void setposition(int x, int y, int width, int height)
         {
-
             _startPosX = x;
 
             _startPosY = y;
             _pictureWidth = width;
             _pictureHeight = height;
-
         }
         public void Moveship(Direction direction)
         {
-
             float step = MaxSpeed * 100 / Weight;
-
             switch (direction)
-
             {
                 case Direction.Right:
-
                     if (_startPosX + step < _pictureWidth - carWidth - 208)
                     {
                         _startPosX += step;
@@ -110,7 +100,6 @@ namespace WindowsFormsAppAircraftcarrier
             g.FillRectangle(Brushes.Goldenrod, _startPosX + 40, _startPosY + 30, 140, 40);
             g.DrawRectangle(pen, _startPosX + 80, _startPosY + 35, 150, 30);
             g.FillRectangle(Brushes.Goldenrod, _startPosX + 80, _startPosY + 35, 150, 30);
-
             if (plaines)
             {
                 g.DrawEllipse(pen, _startPosX + 45, _startPosY + 37, 25, 25);
@@ -124,36 +113,26 @@ namespace WindowsFormsAppAircraftcarrier
             }
             g.FillEllipse(Brushes.Coral, _startPosX + 160, _startPosY + 87, 25, 10);
             g.FillEllipse(Brushes.Coral, _startPosX + 170, _startPosY + 83, 5, 18);
-
             g.FillEllipse(Brushes.Coral, _startPosX + 130, _startPosY + 87, 25, 10);
             g.FillEllipse(Brushes.Coral, _startPosX + 140, _startPosY + 83, 5, 18);
-
             g.FillEllipse(Brushes.Coral, _startPosX + 100, _startPosY + 87, 25, 10);
             g.FillEllipse(Brushes.Coral, _startPosX + 110, _startPosY + 83, 5, 18);
-
             g.FillEllipse(Brushes.Coral, _startPosX + 70, _startPosY + 87, 25, 10);
             g.FillEllipse(Brushes.Coral, _startPosX + 80, _startPosY + 83, 5, 18);
-
             g.FillEllipse(Brushes.Coral, _startPosX + 95, _startPosY - 2, 40, 30);
-
             g.FillEllipse(Brushes.Coral, _startPosX + 110, _startPosY - 30, 10, 30);
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY - 56, 8, 8);
-
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY - 66, 8, 8);
-
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY - 46, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY + 20, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 125, _startPosY + 20, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 97, _startPosY + 20, 8, 8);
-
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY + 9, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 125, _startPosY + 9, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 97, _startPosY + 9, 8, 8);
-
             g.FillEllipse(Brushes.Sienna, _startPosX + 111, _startPosY - 2, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 125, _startPosY - 2, 8, 8);
             g.FillEllipse(Brushes.Sienna, _startPosX + 97, _startPosY - 2, 8, 8);
-
             if (Aerodrom)
             {
                 Brush spoiler = new SolidBrush(Color.Fuchsia);
@@ -162,11 +141,9 @@ namespace WindowsFormsAppAircraftcarrier
                 g.FillRectangle(spoiler, _startPosX + 150, _startPosY + 38, 10, 25);
                 g.FillEllipse(spoiler, _startPosX + 60, _startPosY + 80, 150, 30);
                 g.FillRectangle(spoiler, _startPosX + 40, _startPosY + 81, 40, 20);
-
             }
         }
     }
-
 }
 
 
