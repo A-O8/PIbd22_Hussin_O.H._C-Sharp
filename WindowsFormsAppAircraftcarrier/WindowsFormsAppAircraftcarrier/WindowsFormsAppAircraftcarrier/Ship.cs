@@ -26,6 +26,11 @@ namespace WindowsFormsAppAircraftcarrier
         public abstract void Drawship(Graphics g);
 
         public abstract void MoveShip(Direction direction);
+
+        public void SetMainColor(Color color)
+        {
+            MainColor = color;
+        }
     }
 
 }

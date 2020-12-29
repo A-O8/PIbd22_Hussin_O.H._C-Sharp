@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.boxParkimg = new System.Windows.Forms.PictureBox();
-            this.Aircraftcamier = new System.Windows.Forms.Button();
             this.Warship = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,16 +51,6 @@
             this.boxParkimg.Size = new System.Drawing.Size(1015, 698);
             this.boxParkimg.TabIndex = 0;
             this.boxParkimg.TabStop = false;
-            // 
-            // Aircraftcamier
-            // 
-            this.Aircraftcamier.Location = new System.Drawing.Point(812, 30);
-            this.Aircraftcamier.Name = "Aircraftcamier";
-            this.Aircraftcamier.Size = new System.Drawing.Size(202, 69);
-            this.Aircraftcamier.TabIndex = 1;
-            this.Aircraftcamier.Text = "the Aircraftcarrier";
-            this.Aircraftcamier.UseVisualStyleBackColor = true;
-            this.Aircraftcamier.Click += new System.EventHandler(this.Aircraftcamier_Click);
             // 
             // Warship
             // 
@@ -168,7 +157,6 @@
             this.Controls.Add(this.listBoxParkings);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Warship);
-            this.Controls.Add(this.Aircraftcamier);
             this.Controls.Add(this.boxParkimg);
             this.Name = "FormParking";
             this.Text = "FormParking";
@@ -183,7 +171,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox boxParkimg;
-        private System.Windows.Forms.Button Aircraftcamier;
         private System.Windows.Forms.Button Warship;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bTake;

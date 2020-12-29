@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WindowsFormsAppAircraftcarrier
 {
    public interface WaterITransport
@@ -13,7 +12,7 @@ namespace WindowsFormsAppAircraftcarrier
         void MoveShip(Direction direction);
 
         void Drawship(Graphics g);
-
+        void SetMainColor(Color color);
     }
 }
 
