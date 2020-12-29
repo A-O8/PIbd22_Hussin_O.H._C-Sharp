@@ -7,12 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WindowsFormsAppAircraftcarrier
 {
     public partial class FormAircraft_carrier : Form
     {
-
         private Aircraft_carrier ship;
         public FormAircraft_carrier()
         {
@@ -25,7 +23,6 @@ namespace WindowsFormsAppAircraftcarrier
             ship.DrawCar(gr);
             pictureBoxAircraft_carrier.Image = bmp;
         }
-
         private void Aircraftcarrier_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -34,9 +31,7 @@ namespace WindowsFormsAppAircraftcarrier
             ship.setposition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxAircraft_carrier.Width,
           pictureBoxAircraft_carrier.Height);
             Draw();
-
         }
-
         private void MoveAircraftcarrier_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
@@ -57,7 +52,5 @@ namespace WindowsFormsAppAircraftcarrier
             }
             Draw();
         }
-
-       
     }
 }
