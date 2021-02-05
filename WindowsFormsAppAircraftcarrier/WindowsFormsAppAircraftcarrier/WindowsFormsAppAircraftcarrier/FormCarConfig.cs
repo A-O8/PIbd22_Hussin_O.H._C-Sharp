@@ -18,14 +18,14 @@ namespace WindowsFormsAppAircraftcarrier
         {
             InitializeComponent();
             Cancel.Click += (object sender, EventArgs e) => { Close(); };
-            panelColor1.MouseDown += panelColor_MouseDown;
-            panelColor2.MouseDown += panelColor_MouseDown;
-            panelColor3.MouseDown += panelColor_MouseDown;
-            panelColor4.MouseDown += panelColor_MouseDown;
-            panelColor5.MouseDown += panelColor_MouseDown;
-            panelColor6.MouseDown += panelColor_MouseDown;
-            panelColor7.MouseDown += panelColor_MouseDown;
-            panelColor8.MouseDown += panelColor_MouseDown;
+            colorred.MouseDown += panelColor_MouseDown;
+            colorgreen.MouseDown += panelColor_MouseDown;
+            colorblack.MouseDown += panelColor_MouseDown;
+            coloryellow.MouseDown += panelColor_MouseDown;
+            colorblue.MouseDown += panelColor_MouseDown;
+            colorpurple.MouseDown += panelColor_MouseDown;
+            colorwhite.MouseDown += panelColor_MouseDown;
+            colorfuchsia.MouseDown += panelColor_MouseDown;
             Add.Click += (object sender, EventArgs e) => { eventAddWarship.Invoke(Ship); Close(); };
         }
         private void Drawship()
@@ -62,12 +62,12 @@ namespace WindowsFormsAppAircraftcarrier
         }
         private void labelAircraftcarrier_MouseDown(object sender, MouseEventArgs e)
         {
-            labelAircraftcarrier.DoDragDrop(labelAircraftcarrier.Text, DragDropEffects.Move | DragDropEffects.Copy);
+            Aircraftcarrier.DoDragDrop(Aircraftcarrier.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
 
         private void labelWarship_MouseDown(object sender, MouseEventArgs e)
         {
-            labelWarship.DoDragDrop(labelWarship.Text, DragDropEffects.Move | DragDropEffects.Copy);
+            Warship.DoDragDrop(Warship.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
         private void panelAircraftcarrier_DragEnter(object sender, DragEventArgs e)
         {
@@ -117,7 +117,7 @@ namespace WindowsFormsAppAircraftcarrier
             }
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
 
         }

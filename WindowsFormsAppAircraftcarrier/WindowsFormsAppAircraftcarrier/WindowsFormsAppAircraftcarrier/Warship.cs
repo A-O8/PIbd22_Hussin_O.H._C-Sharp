@@ -13,11 +13,24 @@ namespace WindowsFormsAppAircraftcarrier
         protected readonly int АвианосецHeight = 100;
         protected double chWidth = 1.1;
         protected double chHeight = 3.2;
+        /// Разделитель для записи информации по объекту в файл
+        protected readonly char separator = ';';
         public Warship(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+        }
+        // Конструктор для загрузки с файла
+        public Warship(string info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
         protected Warship(int maxSpeed, float weight, Color mainColor, int АвианосецWidth, int АвианосецHeight)
         {
@@ -64,7 +77,6 @@ namespace WindowsFormsAppAircraftcarrier
                     break;
             }
         }
-
         public override void Drawship(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -84,7 +96,10 @@ namespace WindowsFormsAppAircraftcarrier
            new PointF(_startPosX, _startPosY+90),
              };
             g.FillPolygon(new SolidBrush(MainColor), sours);
-
+        }
+        public override string ToString()
+        {
+            return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
         }
     }
 }

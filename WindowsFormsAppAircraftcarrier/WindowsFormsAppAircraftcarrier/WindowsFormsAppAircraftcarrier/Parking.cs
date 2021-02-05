@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WindowsFormsAppAircraftcarrier
 {
     class Parking<T> where T : class, WaterITransport
     {
-        private readonly T[] places;
+        private readonly List<T> places;
         /// <summary>
         /// Ширина окна отрисовки
         /// </summary>
         private readonly int pictureWidth;
+        private readonly int maxCount;
         /// <summary>
         /// Высота окна отрисовки
         /// </summary>
@@ -36,46 +36,37 @@ namespace WindowsFormsAppAircraftcarrier
         {
             int width = picWidth / placeSizeWidth;
             int height = picHeight / placeSizeHeight;
-            places = new T[width * height];
+            places = new List<T>();
             pictureWidth = picWidth;
             pictureHeight = picHeight;
+            maxCount = width * height;
         }
-        public static bool operator +(Parking<T> p, T Warship)
+        public static bool operator +(Parking<T> p, T Ship)
         {
-            int Ofstring = p.pictureHeight / placeSizeHeight;
-
-            for (int i = 0; i < p.places.Length; i++)
+            if (p.places.Count >= p.maxCount)
             {
-                if (p.places[i] == null)
-                {
-                    MessageBox.Show(i.ToString());
-                    Warship.SetPosition((i / Ofstring) * placeSizeWidth + 10, (i % Ofstring) * placeSizeHeight + 15, p.pictureWidth, p.pictureHeight);
-                    p.places[i] = Warship;
-                    return true;
-                }
+                return false;
             }
-            return false;
+            p.places.Add(Ship);
+            return true;
         }
         /// <summary>
         public static T operator -(Parking<T> p, int index)
         {
-
-            if (index < 0 || index > p.places.Length)
-
+            if (index < -1 || index > p.places.Count)
             {
                 return null;
             }
-            T pl = p.places[index];
-            pl.SetPosition(10, 10, p.pictureWidth, p.pictureHeight);
-            p.places[index] = null;
-
-            return pl;
+            T car = p.places[index];
+            p.places.RemoveAt(index);
+            return car;
         }
         public void Draw(Graphics g)
         {
             DrawMarking(g);
-            for (int i = 0; i < places.Length; i++)
+            for (int i = 0; i < places.Count; i++)
             {
+                places[i].SetPosition(3 + i / 3 * placeSizeWidth + 3, i % 3 * placeSizeHeight + 15, pictureWidth, pictureHeight);
                 places[i]?.Drawship(g);
             }
         }
@@ -91,7 +82,15 @@ namespace WindowsFormsAppAircraftcarrier
                 }
                 g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
             }
-        }
 
+        }
+        public T GetNext(int index)
+        {
+            if (index < 0 || index >= places.Count)
+            {
+                return null;
+            }
+            return places[index];
+        }
     }
 }

@@ -10,17 +10,12 @@ namespace WindowsFormsAppAircraftcarrier
 
     {
         /// <summary>
-        /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
-
         public bool Plaines { private set; get; }
         public bool Aerodrom { private set; get; }
-
         public Aircraft_carrier(int maxSpeed, float weight, Color mainColor, Color dopColor,
- bool plaines, bool aerodrom)
-
-             : base(maxSpeed, weight, mainColor)
+ bool plaines, bool aerodrom): base(maxSpeed, weight, mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -28,6 +23,19 @@ namespace WindowsFormsAppAircraftcarrier
             DopColor = dopColor;
             Plaines = plaines;
             Aerodrom = aerodrom;
+        }
+        public Aircraft_carrier(string info) : base(info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 6)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                Plaines = Convert.ToBoolean(strs[4]);
+                Aerodrom = Convert.ToBoolean(strs[5]);
+            }
         }
         public override void Drawship(Graphics g)
         {
@@ -51,23 +59,26 @@ namespace WindowsFormsAppAircraftcarrier
             }
             if (Aerodrom)
             {
-                g.FillEllipse(Brushes.Coral, _startPosX + 160, _startPosY + 87, 25, 10);
-                g.FillEllipse(Brushes.Coral, _startPosX + 170, _startPosY + 83, 5, 18);
-                g.FillEllipse(Brushes.Coral, _startPosX + 130, _startPosY + 87, 25, 10);
-                g.FillEllipse(Brushes.Coral, _startPosX + 140, _startPosY + 83, 5, 18);
-                g.FillEllipse(Brushes.Coral, _startPosX + 100, _startPosY + 87, 25, 10);
-                g.FillEllipse(Brushes.Coral, _startPosX + 110, _startPosY + 83, 5, 18);
-                g.FillEllipse(Brushes.Coral, _startPosX + 70, _startPosY + 87, 25, 10);
-                g.FillEllipse(Brushes.Coral, _startPosX + 80, _startPosY + 83, 5, 18);
+                Brush spoiler = new SolidBrush(DopColor);
+                g.FillEllipse(spoiler, _startPosX + 160, _startPosY + 87, 25, 10);
+                g.FillEllipse(spoiler, _startPosX + 170, _startPosY + 83, 5, 18);
+                g.FillEllipse(spoiler, _startPosX + 130, _startPosY + 87, 25, 10);
+                g.FillEllipse(spoiler, _startPosX + 140, _startPosY + 83, 5, 18);
+                g.FillEllipse(spoiler, _startPosX + 100, _startPosY + 87, 25, 10);
+                g.FillEllipse(spoiler, _startPosX + 110, _startPosY + 83, 5, 18);
+                g.FillEllipse(spoiler, _startPosX + 70, _startPosY + 87, 25, 10);
+                g.FillEllipse(spoiler, _startPosX + 80, _startPosY + 83, 5, 18);
             }
+            
         }
-
-
         public void SetDopColor(Color color)
         {
             DopColor = color;
         }
-
+        public override string ToString()
+        {
+            return$"{base.ToString()}{separator}{DopColor.Name}{separator}{Aerodrom}{separator}{Plaines}";
+        }
     }
 
 }
