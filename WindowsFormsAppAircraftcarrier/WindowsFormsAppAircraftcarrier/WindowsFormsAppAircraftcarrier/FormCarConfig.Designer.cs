@@ -38,15 +38,15 @@
             this.body = new System.Windows.Forms.GroupBox();
             this.Warship = new System.Windows.Forms.Label();
             this.Aircraftcarrier = new System.Windows.Forms.Label();
-            this.pWarship = new System.Windows.Forms.Panel();
+            this.placeship = new System.Windows.Forms.Panel();
             this.display = new System.Windows.Forms.PictureBox();
             this.Colour = new System.Windows.Forms.GroupBox();
             this.DopColor = new System.Windows.Forms.Label();
             this.MainColor = new System.Windows.Forms.Label();
-            this.colorwhite = new System.Windows.Forms.PictureBox();
-            this.colorblue = new System.Windows.Forms.PictureBox();
-            this.colorteal = new System.Windows.Forms.PictureBox();
             this.colorfuchsia = new System.Windows.Forms.PictureBox();
+            this.colorblue = new System.Windows.Forms.PictureBox();
+            this.colorwhite = new System.Windows.Forms.PictureBox();
+            this.colorgray = new System.Windows.Forms.PictureBox();
             this.coloryellow = new System.Windows.Forms.PictureBox();
             this.colorblack = new System.Windows.Forms.PictureBox();
             this.colorlime = new System.Windows.Forms.PictureBox();
@@ -57,13 +57,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).BeginInit();
             this.body.SuspendLayout();
-            this.pWarship.SuspendLayout();
+            this.placeship.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.display)).BeginInit();
             this.Colour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.colorwhite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorblue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorteal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorfuchsia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorblue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorwhite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorgray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coloryellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorblack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorlime)).BeginInit();
@@ -202,17 +202,17 @@
             this.Aircraftcarrier.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelAircraftcarrier_DragDrop);
             this.Aircraftcarrier.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelAircraftcarrier_MouseDown);
             // 
-            // pWarship
+            // placeship
             // 
-            this.pWarship.AllowDrop = true;
-            this.pWarship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pWarship.Controls.Add(this.display);
-            this.pWarship.Location = new System.Drawing.Point(304, 44);
-            this.pWarship.Name = "pWarship";
-            this.pWarship.Size = new System.Drawing.Size(407, 220);
-            this.pWarship.TabIndex = 2;
-            this.pWarship.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelAircraftcarrier_DragDrop);
-            this.pWarship.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelAircraftcarrier_DragEnter);
+            this.placeship.AllowDrop = true;
+            this.placeship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.placeship.Controls.Add(this.display);
+            this.placeship.Location = new System.Drawing.Point(304, 44);
+            this.placeship.Name = "placeship";
+            this.placeship.Size = new System.Drawing.Size(407, 220);
+            this.placeship.TabIndex = 2;
+            this.placeship.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelAircraftcarrier_DragDrop);
+            this.placeship.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelAircraftcarrier_DragEnter);
             // 
             // display
             // 
@@ -227,10 +227,10 @@
             // 
             this.Colour.Controls.Add(this.DopColor);
             this.Colour.Controls.Add(this.MainColor);
-            this.Colour.Controls.Add(this.colorwhite);
-            this.Colour.Controls.Add(this.colorblue);
-            this.Colour.Controls.Add(this.colorteal);
             this.Colour.Controls.Add(this.colorfuchsia);
+            this.Colour.Controls.Add(this.colorblue);
+            this.Colour.Controls.Add(this.colorwhite);
+            this.Colour.Controls.Add(this.colorgray);
             this.Colour.Controls.Add(this.coloryellow);
             this.Colour.Controls.Add(this.colorblack);
             this.Colour.Controls.Add(this.colorlime);
@@ -246,9 +246,9 @@
             // 
             this.DopColor.AllowDrop = true;
             this.DopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DopColor.Location = new System.Drawing.Point(190, 16);
+            this.DopColor.Location = new System.Drawing.Point(144, 16);
             this.DopColor.Name = "DopColor";
-            this.DopColor.Size = new System.Drawing.Size(113, 34);
+            this.DopColor.Size = new System.Drawing.Size(65, 34);
             this.DopColor.TabIndex = 1;
             this.DopColor.Text = "Доп. цвет";
             this.DopColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,22 +261,22 @@
             this.MainColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainColor.Location = new System.Drawing.Point(28, 16);
             this.MainColor.Name = "MainColor";
-            this.MainColor.Size = new System.Drawing.Size(124, 38);
+            this.MainColor.Size = new System.Drawing.Size(102, 38);
             this.MainColor.TabIndex = 1;
             this.MainColor.Text = "Основной цвет";
             this.MainColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MainColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
             this.MainColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelColor_DragEnter);
             // 
-            // colorwhite
+            // colorfuchsia
             // 
-            this.colorwhite.BackColor = System.Drawing.Color.White;
-            this.colorwhite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorwhite.Location = new System.Drawing.Point(91, 130);
-            this.colorwhite.Name = "colorwhite";
-            this.colorwhite.Size = new System.Drawing.Size(50, 42);
-            this.colorwhite.TabIndex = 0;
-            this.colorwhite.TabStop = false;
+            this.colorfuchsia.BackColor = System.Drawing.Color.Fuchsia;
+            this.colorfuchsia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorfuchsia.Location = new System.Drawing.Point(91, 130);
+            this.colorfuchsia.Name = "colorfuchsia";
+            this.colorfuchsia.Size = new System.Drawing.Size(50, 42);
+            this.colorfuchsia.TabIndex = 0;
+            this.colorfuchsia.TabStop = false;
             // 
             // colorblue
             // 
@@ -288,31 +288,31 @@
             this.colorblue.TabIndex = 0;
             this.colorblue.TabStop = false;
             // 
-            // colorteal
+            // colorwhite
             // 
-            this.colorteal.BackColor = System.Drawing.Color.Teal;
-            this.colorteal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorteal.Location = new System.Drawing.Point(168, 130);
-            this.colorteal.Name = "colorteal";
-            this.colorteal.Size = new System.Drawing.Size(50, 42);
-            this.colorteal.TabIndex = 0;
-            this.colorteal.TabStop = false;
+            this.colorwhite.BackColor = System.Drawing.Color.White;
+            this.colorwhite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorwhite.Location = new System.Drawing.Point(147, 130);
+            this.colorwhite.Name = "colorwhite";
+            this.colorwhite.Size = new System.Drawing.Size(50, 42);
+            this.colorwhite.TabIndex = 0;
+            this.colorwhite.TabStop = false;
             // 
-            // colorfuchsia
+            // colorgray
             // 
-            this.colorfuchsia.BackColor = System.Drawing.Color.Fuchsia;
-            this.colorfuchsia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorfuchsia.Location = new System.Drawing.Point(244, 130);
-            this.colorfuchsia.Name = "colorfuchsia";
-            this.colorfuchsia.Size = new System.Drawing.Size(50, 42);
-            this.colorfuchsia.TabIndex = 0;
-            this.colorfuchsia.TabStop = false;
+            this.colorgray.BackColor = System.Drawing.Color.Gray;
+            this.colorgray.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorgray.Location = new System.Drawing.Point(233, 129);
+            this.colorgray.Name = "colorgray";
+            this.colorgray.Size = new System.Drawing.Size(50, 42);
+            this.colorgray.TabIndex = 0;
+            this.colorgray.TabStop = false;
             // 
             // coloryellow
             // 
             this.coloryellow.BackColor = System.Drawing.Color.Yellow;
             this.coloryellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.coloryellow.Location = new System.Drawing.Point(244, 87);
+            this.coloryellow.Location = new System.Drawing.Point(233, 87);
             this.coloryellow.Name = "coloryellow";
             this.coloryellow.Size = new System.Drawing.Size(50, 36);
             this.coloryellow.TabIndex = 0;
@@ -322,7 +322,7 @@
             // 
             this.colorblack.BackColor = System.Drawing.Color.Black;
             this.colorblack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorblack.Location = new System.Drawing.Point(168, 87);
+            this.colorblack.Location = new System.Drawing.Point(147, 87);
             this.colorblack.Name = "colorblack";
             this.colorblack.Size = new System.Drawing.Size(50, 36);
             this.colorblack.TabIndex = 0;
@@ -332,7 +332,7 @@
             // 
             this.colorlime.BackColor = System.Drawing.Color.Lime;
             this.colorlime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorlime.Location = new System.Drawing.Point(91, 87);
+            this.colorlime.Location = new System.Drawing.Point(80, 87);
             this.colorlime.Name = "colorlime";
             this.colorlime.Size = new System.Drawing.Size(50, 36);
             this.colorlime.TabIndex = 0;
@@ -342,7 +342,7 @@
             // 
             this.colorred.BackColor = System.Drawing.Color.Red;
             this.colorred.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorred.Location = new System.Drawing.Point(28, 88);
+            this.colorred.Location = new System.Drawing.Point(24, 87);
             this.colorred.Name = "colorred";
             this.colorred.Size = new System.Drawing.Size(50, 36);
             this.colorred.TabIndex = 0;
@@ -375,7 +375,7 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.Colour);
-            this.Controls.Add(this.pWarship);
+            this.Controls.Add(this.placeship);
             this.Controls.Add(this.body);
             this.Controls.Add(this.Parameters);
             this.Name = "FormCarConfig";
@@ -385,13 +385,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).EndInit();
             this.body.ResumeLayout(false);
-            this.pWarship.ResumeLayout(false);
+            this.placeship.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.display)).EndInit();
             this.Colour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.colorwhite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorblue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colorteal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorfuchsia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorblue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorwhite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorgray)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coloryellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorblack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorlime)).EndInit();
@@ -412,15 +412,15 @@
         private System.Windows.Forms.GroupBox body;
         private System.Windows.Forms.Label Warship;
         private System.Windows.Forms.Label Aircraftcarrier;
-        private System.Windows.Forms.Panel pWarship;
+        private System.Windows.Forms.Panel placeship;
         private System.Windows.Forms.PictureBox display;
         private System.Windows.Forms.GroupBox Colour;
         private System.Windows.Forms.Label DopColor;
         private System.Windows.Forms.Label MainColor;
-        private System.Windows.Forms.PictureBox colorwhite;
-        private System.Windows.Forms.PictureBox colorblue;
-        private System.Windows.Forms.PictureBox colorteal;
         private System.Windows.Forms.PictureBox colorfuchsia;
+        private System.Windows.Forms.PictureBox colorblue;
+        private System.Windows.Forms.PictureBox colorwhite;
+        private System.Windows.Forms.PictureBox colorgray;
         private System.Windows.Forms.PictureBox coloryellow;
         private System.Windows.Forms.PictureBox colorblack;
         private System.Windows.Forms.PictureBox colorlime;

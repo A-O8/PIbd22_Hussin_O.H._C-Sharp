@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace WindowsFormsAppAircraftcarrier
 {
-   public class Aircraft_carrier : Warship
+    public class Aircraft_carrier : Warship, IEquatable<Aircraft_carrier>
 
     {
         /// <summary>
@@ -17,6 +17,7 @@ namespace WindowsFormsAppAircraftcarrier
         public bool Aerodrom { private set; get; }
         public Aircraft_carrier(int maxSpeed, float weight, Color mainColor, Color dopColor,
  bool plaines, bool aerodrom)
+
              : base(maxSpeed, weight, mainColor)
         {
             MaxSpeed = maxSpeed;
@@ -80,8 +81,58 @@ namespace WindowsFormsAppAircraftcarrier
         {
             return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Aerodrom}{separator}{Plaines}";
         }
+        public bool Equals(Aircraft_carrier other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Plaines != other.Plaines)
+            {
+                return false;
+            }
+            if (Aerodrom != other.Aerodrom)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Aircraft_carrier shipObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(shipObj);
+            }
+        }
     }
-
 }
 
 

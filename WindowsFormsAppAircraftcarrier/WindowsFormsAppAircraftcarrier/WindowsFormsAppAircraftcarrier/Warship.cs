@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace WindowsFormsAppAircraftcarrier
 {
-   public class Warship : Ship
+   public class Warship : Ship, IEquatable<Warship>
     {
         protected readonly int АвианосецWidth = 100;
         protected readonly int АвианосецHeight = 100;
@@ -63,6 +63,7 @@ namespace WindowsFormsAppAircraftcarrier
                     {
                         _startPosY -= step;
                     }
+
                     break;
                 //вниз                
                 case Direction.Down:
@@ -73,13 +74,13 @@ namespace WindowsFormsAppAircraftcarrier
                     break;
             }
         }
-
         public override void Drawship(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
 
             Brush brRed = new SolidBrush(Color.Red);
             g.FillEllipse(brRed, _startPosX + 270, _startPosY + 12, 35, 120);
+
             g.FillRectangle(Brushes.Teal, _startPosX + 2, _startPosY + 20, 240, 102);
             PointF[] sours =
                      {
@@ -96,6 +97,45 @@ namespace WindowsFormsAppAircraftcarrier
         public override string ToString()
         {
             return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+        }
+        public bool Equals(Warship other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Warship shipObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(shipObj);
+            }
         }
     }
 }

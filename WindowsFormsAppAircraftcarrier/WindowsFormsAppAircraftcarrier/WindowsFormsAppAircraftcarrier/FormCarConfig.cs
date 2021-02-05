@@ -12,8 +12,8 @@ namespace WindowsFormsAppAircraftcarrier
 {
     public partial class FormCarConfig : Form
     {
-        WaterITransport Ship = null;
-        private event Action<WaterITransport> eventAddWarship;
+        Ship Ship = null;
+        private event Action<Ship> eventAddWarship;
         public FormCarConfig()
         {
             InitializeComponent();
@@ -23,9 +23,9 @@ namespace WindowsFormsAppAircraftcarrier
             colorblack.MouseDown += panelColor_MouseDown;
             coloryellow.MouseDown += panelColor_MouseDown;
             colorblue.MouseDown += panelColor_MouseDown;
-            colorwhite.MouseDown += panelColor_MouseDown;
-            colorteal.MouseDown += panelColor_MouseDown;
             colorfuchsia.MouseDown += panelColor_MouseDown;
+            colorwhite.MouseDown += panelColor_MouseDown;
+            colorgray.MouseDown += panelColor_MouseDown;
             Add.Click += (object sender, EventArgs e) => { eventAddWarship.Invoke(Ship); Close(); };
         }
         private void Drawship()
@@ -105,7 +105,7 @@ namespace WindowsFormsAppAircraftcarrier
                 Drawship();
             }
         }
-        public void AddEvent(Action<WaterITransport> ev)
+        public void AddEvent(Action<Ship> ev)
         {
             if (eventAddWarship == null)
             {
