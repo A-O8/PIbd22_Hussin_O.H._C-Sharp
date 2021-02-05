@@ -38,7 +38,6 @@ namespace WindowsFormsAppAircraftcarrier
                 DopColor = Color.FromName(strs[3]);
                 Plaines = Convert.ToBoolean(strs[4]);
                 Aerodrom = Convert.ToBoolean(strs[5]);
-
             }
         }
         public override void Drawship(Graphics g)
