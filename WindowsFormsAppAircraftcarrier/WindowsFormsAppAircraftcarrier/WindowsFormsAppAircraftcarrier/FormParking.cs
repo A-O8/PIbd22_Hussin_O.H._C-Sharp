@@ -80,22 +80,17 @@ namespace WindowsFormsAppAircraftcarrier
         }
         private void bTake_Click(object sender, EventArgs e)
             {
-
-          
                 if (listBoxParkings.SelectedIndex > -1 && placeparking.Text != "")
                 {
                     try
                     {
-
                         var Aircraftcarrier = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(placeparking.Text);
-
                 if (Aircraftcarrier != null)
                 {
                     FormAircraft_carrier form = new FormAircraft_carrier();
                     form.SetWarship(Aircraftcarrier);
                     form.ShowDialog();
                         logger.Info($"Изъята ship {Aircraftcarrier} с места {placeparking.Text}");
-
                         Draw();
                     }
                 }
@@ -145,8 +140,6 @@ namespace WindowsFormsAppAircraftcarrier
                 try
                 {
                     parkingCollection.SaveData(saveFileDialog.FileName);
-
-
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Сохранено в файл " + saveFileDialog.FileName);
                 }
@@ -181,10 +174,8 @@ namespace WindowsFormsAppAircraftcarrier
                 }
             }
         }
-
         private void Sort_Click(object sender, EventArgs e)
         {
-
             if (listBoxParkings.SelectedIndex > -1)
             {
                 parkingCollection[listBoxParkings.SelectedItem.ToString()].Sort();
