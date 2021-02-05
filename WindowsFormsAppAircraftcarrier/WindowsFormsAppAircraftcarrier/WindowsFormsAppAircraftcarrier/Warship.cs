@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WindowsFormsAppAircraftcarrier
 {
    public class Warship : Ship
@@ -13,7 +12,6 @@ namespace WindowsFormsAppAircraftcarrier
         protected readonly int АвианосецHeight = 100;
         protected double chWidth = 1.1;
         protected double chHeight = 3.2;
-        /// Разделитель для записи информации по объекту в файл
         protected readonly char separator = ';';
         public Warship(int maxSpeed, float weight, Color mainColor)
         {
@@ -21,7 +19,6 @@ namespace WindowsFormsAppAircraftcarrier
             Weight = weight;
             MainColor = mainColor;
         }
-        // Конструктор для загрузки с файла
         public Warship(string info)
         {
             string[] strs = info.Split(separator);
@@ -66,7 +63,6 @@ namespace WindowsFormsAppAircraftcarrier
                     {
                         _startPosY -= step;
                     }
-
                     break;
                 //вниз                
                 case Direction.Down:
@@ -77,13 +73,13 @@ namespace WindowsFormsAppAircraftcarrier
                     break;
             }
         }
+
         public override void Drawship(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
 
             Brush brRed = new SolidBrush(Color.Red);
             g.FillEllipse(brRed, _startPosX + 270, _startPosY + 12, 35, 120);
-
             g.FillRectangle(Brushes.Teal, _startPosX + 2, _startPosY + 20, 240, 102);
             PointF[] sours =
                      {

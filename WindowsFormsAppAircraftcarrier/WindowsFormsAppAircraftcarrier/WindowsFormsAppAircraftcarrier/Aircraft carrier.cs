@@ -10,12 +10,14 @@ namespace WindowsFormsAppAircraftcarrier
 
     {
         /// <summary>
+        /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
         public bool Plaines { private set; get; }
         public bool Aerodrom { private set; get; }
         public Aircraft_carrier(int maxSpeed, float weight, Color mainColor, Color dopColor,
- bool plaines, bool aerodrom): base(maxSpeed, weight, mainColor)
+ bool plaines, bool aerodrom)
+             : base(maxSpeed, weight, mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -69,7 +71,6 @@ namespace WindowsFormsAppAircraftcarrier
                 g.FillEllipse(spoiler, _startPosX + 70, _startPosY + 87, 25, 10);
                 g.FillEllipse(spoiler, _startPosX + 80, _startPosY + 83, 5, 18);
             }
-            
         }
         public void SetDopColor(Color color)
         {
@@ -77,7 +78,7 @@ namespace WindowsFormsAppAircraftcarrier
         }
         public override string ToString()
         {
-            return$"{base.ToString()}{separator}{DopColor.Name}{separator}{Aerodrom}{separator}{Plaines}";
+            return $"{base.ToString()}{separator}{DopColor.Name}{separator}{Aerodrom}{separator}{Plaines}";
         }
     }
 

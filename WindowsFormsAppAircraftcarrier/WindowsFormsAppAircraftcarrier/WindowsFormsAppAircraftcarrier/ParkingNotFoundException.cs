@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WindowsFormsAppAircraftcarrier
 {
-    public enum Direction
+    public class ParkingNotFoundException : Exception
     {
-        Up,
-        Down,
-        Left,
-        Right
+        public ParkingNotFoundException(int i) : base("Не найден ship по месту " + i)
+        { }
     }
 }

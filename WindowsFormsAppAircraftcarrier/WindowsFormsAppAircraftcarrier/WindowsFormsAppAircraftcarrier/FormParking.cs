@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 namespace WindowsFormsAppAircraftcarrier
 {
     public partial class FormParking : Form
     {
         private readonly ParkingCollection parkingCollection;
+        private readonly Logger logger;
         public FormParking()
         {
             InitializeComponent();
-            parkingCollection = new ParkingCollection(boxParkimg.Width, boxParkimg.Height); 
+            parkingCollection = new ParkingCollection(boxParkimg.Width, boxParkimg.Height);
+            logger = LogManager.GetCurrentClassLogger();
         }
         private void ReloadLevels()
         {
@@ -51,35 +54,66 @@ namespace WindowsFormsAppAircraftcarrier
         {
             if (Ship != null && listBoxParkings.SelectedIndex > -1)
             {
+                try { 
                 if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + Ship)
                 {
                     Draw();
-                }
+                        logger.Info($"Добавлена Ship{Ship}");
+                    }
                 else
                 {
                     MessageBox.Show("поставить не удалось");
+                }
+                    Draw();
+                }
+                catch (ParkingOverflowException ex)
+                {
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
         private void bTake_Click(object sender, EventArgs e)
             {
 
-            if (maskedTextBox.Text != "")
-            {
-                var Aircraftcarrier = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox.Text);
+          
+                if (listBoxParkings.SelectedIndex > -1 && placeparking.Text != "")
+                {
+                    try
+                    {
+
+                        var Aircraftcarrier = parkingCollection[listBoxParkings.SelectedItem.ToString()] - Convert.ToInt32(placeparking.Text);
 
                 if (Aircraftcarrier != null)
                 {
                     FormAircraft_carrier form = new FormAircraft_carrier();
                     form.SetWarship(Aircraftcarrier);
                     form.ShowDialog();
-                }
+                        logger.Info($"Изъята ship {Aircraftcarrier} с места {placeparking.Text}");
 
-                Draw();
+                        Draw();
+                    }
+                }
+                catch (ParkingNotFoundException ex)
+                {
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void listBoxParkings_SelectedIndexChanged(object sender, EventArgs e)
         {
+            logger.Info($"Перешли на парковку {listBoxParkings.SelectedItem.ToString()}");
             Draw();
         }
         private void DelParking_Click(object sender, EventArgs e)
@@ -95,25 +129,31 @@ namespace WindowsFormsAppAircraftcarrier
         }
         private void AddParking_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
+            if (string.IsNullOrEmpty(Nameparking.Text))
             {
                 MessageBox.Show("Введите название парковки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            parkingCollection.AddParking(textBoxNewLevelName.Text);
+            parkingCollection.AddParking(Nameparking.Text);
+            logger.Info($"Добавили парковку {Nameparking.Text}");
             ReloadLevels();
         }
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (parkingCollection.SaveData(saveFileDialog.FileName))
+                try
                 {
+                    parkingCollection.SaveData(saveFileDialog.FileName);
+
+
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Сохранено в файл " + saveFileDialog.FileName);
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -121,19 +161,29 @@ namespace WindowsFormsAppAircraftcarrier
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (parkingCollection.LoadData(openFileDialog.FileName))
+                try
                 {
+                    parkingCollection.LoadData(openFileDialog.FileName);
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Загружено из файла " + openFileDialog.FileName);
                     ReloadLevels();
                     Draw();
                 }
-                else
+                catch (ParkingOccupiedPlaceException ex)
                 {
-                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    logger.Warn(ex.Message);
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
     }
-    } 
+}
 
 
