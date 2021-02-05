@@ -23,11 +23,9 @@ namespace WindowsFormsAppAircraftcarrier
         /// </summary>
         private readonly int pictureHeight;
         /// <summary>
-        
         /// </summary>
         private const int placeSizeWidth = 500;
         /// <summary>
-       
         /// </summary>
         private const int placeSizeHeight = 170;
         private int _currentIndex;
