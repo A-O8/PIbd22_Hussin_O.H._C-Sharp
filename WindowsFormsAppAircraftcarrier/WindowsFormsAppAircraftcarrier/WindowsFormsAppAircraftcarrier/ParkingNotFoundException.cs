@@ -7,7 +7,7 @@ namespace WindowsFormsAppAircraftcarrier
 {
     public class ParkingNotFoundException : Exception
     {
-        public ParkingNotFoundException(int i) : base("Не найден ship по месту " + i)
+        public ParkingNotFoundException(int i) : base("Не найден автомобиль по месту " + i)
         { }
     }
 }

@@ -37,7 +37,7 @@
             this.listBoxParkings = new System.Windows.Forms.ListBox();
             this.Delete = new System.Windows.Forms.Button();
             this.Nameparking = new System.Windows.Forms.TextBox();
-            this.Add = new System.Windows.Forms.Button();
+            this.ADD = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,7 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.Sort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.boxParkimg)).BeginInit();
             this.group_ship.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -74,9 +75,9 @@
             this.group_ship.Controls.Add(this.label1);
             this.group_ship.Controls.Add(this.placeparking);
             this.group_ship.Controls.Add(this.bTake);
-            this.group_ship.Location = new System.Drawing.Point(944, 156);
+            this.group_ship.Location = new System.Drawing.Point(944, 220);
             this.group_ship.Name = "group_ship";
-            this.group_ship.Size = new System.Drawing.Size(202, 216);
+            this.group_ship.Size = new System.Drawing.Size(202, 191);
             this.group_ship.TabIndex = 2;
             this.group_ship.TabStop = false;
             this.group_ship.Text = "the  Ship";
@@ -110,7 +111,7 @@
             // listBoxParkings
             // 
             this.listBoxParkings.FormattingEnabled = true;
-            this.listBoxParkings.Location = new System.Drawing.Point(944, 487);
+            this.listBoxParkings.Location = new System.Drawing.Point(937, 526);
             this.listBoxParkings.Name = "listBoxParkings";
             this.listBoxParkings.Size = new System.Drawing.Size(206, 95);
             this.listBoxParkings.TabIndex = 3;
@@ -118,7 +119,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(947, 588);
+            this.Delete.Location = new System.Drawing.Point(944, 627);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(199, 34);
             this.Delete.TabIndex = 4;
@@ -128,25 +129,25 @@
             // 
             // Nameparking
             // 
-            this.Nameparking.Location = new System.Drawing.Point(982, 422);
+            this.Nameparking.Location = new System.Drawing.Point(973, 461);
             this.Nameparking.Name = "Nameparking";
             this.Nameparking.Size = new System.Drawing.Size(142, 20);
             this.Nameparking.TabIndex = 5;
             // 
-            // Add
+            // ADD
             // 
-            this.Add.Location = new System.Drawing.Point(962, 448);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(190, 33);
-            this.Add.TabIndex = 6;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.AddParking_Click);
+            this.ADD.Location = new System.Drawing.Point(944, 487);
+            this.ADD.Name = "ADD";
+            this.ADD.Size = new System.Drawing.Size(190, 33);
+            this.ADD.TabIndex = 6;
+            this.ADD.Text = "Add";
+            this.ADD.UseVisualStyleBackColor = true;
+            this.ADD.Click += new System.EventHandler(this.AddParking_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1019, 394);
+            this.label2.Location = new System.Drawing.Point(1019, 433);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 7;
@@ -194,13 +195,24 @@
             this.openFileDialog.FileName = "openFileDialog";
             this.openFileDialog.Filter = "txt file | *.txt";
             // 
+            // Sort
+            // 
+            this.Sort.Location = new System.Drawing.Point(951, 164);
+            this.Sort.Name = "Sort";
+            this.Sort.Size = new System.Drawing.Size(191, 44);
+            this.Sort.TabIndex = 9;
+            this.Sort.Text = "Sort";
+            this.Sort.UseVisualStyleBackColor = true;
+            this.Sort.Click += new System.EventHandler(this.Sort_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 698);
+            this.Controls.Add(this.Sort);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.ADD);
             this.Controls.Add(this.Nameparking);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.listBoxParkings);
@@ -232,7 +244,7 @@
         private System.Windows.Forms.ListBox listBoxParkings;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.TextBox Nameparking;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button ADD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
@@ -240,5 +252,6 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button Sort;
     }
 }

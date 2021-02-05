@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 namespace WindowsFormsAppAircraftcarrier
 {
-    class Parking<T> where T : class, WaterITransport
+   public class Parking<T> : IEnumerator<T>, IEnumerable<T>
+        where T : class, WaterITransport
     {
         private readonly List<T> places;
         /// <summary>
@@ -20,13 +23,16 @@ namespace WindowsFormsAppAircraftcarrier
         /// </summary>
         private readonly int pictureHeight;
         /// <summary>
-        /// Размер парковочного места (ширина)
+        
         /// </summary>
         private const int placeSizeWidth = 500;
         /// <summary>
-        /// Размер парковочного места (высота)
+       
         /// </summary>
         private const int placeSizeHeight = 170;
+        private int _currentIndex;
+        public T Current => places[_currentIndex];
+        object IEnumerator.Current => places[_currentIndex];
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -41,13 +47,17 @@ namespace WindowsFormsAppAircraftcarrier
             pictureHeight = picHeight;
             maxCount = width * height;
         }
-        public static bool operator +(Parking<T> p, T Ship)
+        public static bool operator +(Parking<T> p, T ship)
         {
             if (p.places.Count >= p.maxCount)
             {
                 throw new ParkingOverflowException("Переполнено");
             }
-            p.places.Add(Ship);
+            if (p.places.Contains(ship))
+            {
+                throw new ParkingAlreadyHaveException();
+            }
+            p.places.Add(ship);
             return true;
         }
         /// <summary>
@@ -57,9 +67,9 @@ namespace WindowsFormsAppAircraftcarrier
             {
                 throw new ParkingNotFoundException(index);
             }
-            T car = p.places[index];
+            T ship = p.places[index];
             p.places.RemoveAt(index);
-            return car;
+            return ship;
         }
         public void Draw(Graphics g)
         {
@@ -67,7 +77,7 @@ namespace WindowsFormsAppAircraftcarrier
             for (int i = 0; i < places.Count; i++)
             {
                 places[i].SetPosition(5 + i / 3 * placeSizeWidth + 5, i % 3 * placeSizeHeight + 15, pictureWidth, pictureHeight);
-                places[i]?.Drawship(g);
+                places[i].Drawship(g);
             }
         }
         private void DrawMarking(Graphics g)
@@ -82,6 +92,7 @@ namespace WindowsFormsAppAircraftcarrier
                 }
                 g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
             }
+
         }
         public T GetNext(int index)
         {
@@ -90,6 +101,31 @@ namespace WindowsFormsAppAircraftcarrier
                 return null;
             }
             return places[index];
+        }
+        public void Sort() => places.Sort((IComparer<T>)new WarshipComparer());
+        public void Dispose()
+        {
+        }
+        public bool MoveNext()
+        {
+            if (_currentIndex + 1 == places.Count)
+            {
+                return false;
+            }
+            _currentIndex++;
+            return true;
+        }
+        public void Reset()
+        {
+            _currentIndex = -1;
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this;
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this;
         }
     }
 }

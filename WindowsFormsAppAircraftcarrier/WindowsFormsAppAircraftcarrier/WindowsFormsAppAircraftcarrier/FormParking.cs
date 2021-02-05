@@ -50,7 +50,7 @@ namespace WindowsFormsAppAircraftcarrier
             formCarConfig.AddEvent(AddAircraftcarrier);
             formCarConfig.Show();
         }
-        private void AddAircraftcarrier(WaterITransport Ship)
+        private void AddAircraftcarrier(Ship Ship)
         {
             if (Ship != null && listBoxParkings.SelectedIndex > -1)
             {
@@ -182,7 +182,16 @@ namespace WindowsFormsAppAircraftcarrier
             }
         }
 
+        private void Sort_Click(object sender, EventArgs e)
+        {
 
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Sort();
+                Draw();
+                logger.Info("Сортировка уровней");
+            }
+        }
     }
 }
 
