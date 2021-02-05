@@ -45,7 +45,6 @@ namespace WindowsFormsAppAircraftcarrier
 					return parkingStages[ind];
 				}
 				return null;
-
             }
         }
         public void SaveData(string filename)
