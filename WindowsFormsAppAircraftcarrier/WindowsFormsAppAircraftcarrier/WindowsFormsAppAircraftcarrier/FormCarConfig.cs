@@ -19,12 +19,12 @@ namespace WindowsFormsAppAircraftcarrier
             InitializeComponent();
             Cancel.Click += (object sender, EventArgs e) => { Close(); };
             colorred.MouseDown += panelColor_MouseDown;
-            colorgreen.MouseDown += panelColor_MouseDown;
+            colorlime.MouseDown += panelColor_MouseDown;
             colorblack.MouseDown += panelColor_MouseDown;
             coloryellow.MouseDown += panelColor_MouseDown;
             colorblue.MouseDown += panelColor_MouseDown;
-            colorpurple.MouseDown += panelColor_MouseDown;
             colorwhite.MouseDown += panelColor_MouseDown;
+            colorteal.MouseDown += panelColor_MouseDown;
             colorfuchsia.MouseDown += panelColor_MouseDown;
             Add.Click += (object sender, EventArgs e) => { eventAddWarship.Invoke(Ship); Close(); };
         }

@@ -1,0 +1,43 @@
+2021-02-04 08:32:23.3892|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку r
+2021-02-04 08:32:23.4610|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку r
+2021-02-04 08:32:25.9229|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-04 08:32:31.9011|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;ff00c0c0;Black;True;True
+2021-02-04 08:32:34.4800|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-04 08:32:36.8194|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-04 08:32:39.7065|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-04 08:32:42.1638|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-04 08:32:44.9345|WARN|WindowsFormsAppAircraftcarrier.FormParking|Переполнено
+2021-02-04 08:32:51.3545|WARN|WindowsFormsAppAircraftcarrier.FormParking|Не найден ship по месту 7
+2021-02-05 20:23:03.5632|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку x
+2021-02-05 20:23:03.5902|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x
+2021-02-05 20:23:23.2088|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White;Black;True;True
+2021-02-05 20:23:49.5181|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку s
+2021-02-05 20:23:49.5460|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку s
+2021-02-05 20:26:06.6124|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку x
+2021-02-05 20:26:06.6364|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x
+2021-02-05 20:26:15.8781|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;Lime;Black;True;True
+2021-02-05 20:26:33.0623|INFO|WindowsFormsAppAircraftcarrier.FormParking|Загружено из файла C:\Users\omerh\OneDrive\Документы\x3.txt
+2021-02-05 20:26:33.0693|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x1
+2021-02-05 20:27:43.3402|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку A
+2021-02-05 20:27:43.3651|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку A
+2021-02-05 20:27:50.5433|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;Red;Black;False;False
+2021-02-05 20:27:58.3666|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;Blue;Yellow;True;True
+2021-02-05 20:29:07.2278|INFO|WindowsFormsAppAircraftcarrier.FormParking|Загружено из файла C:\Users\omerh\OneDrive\Документы\x3.txt
+2021-02-05 20:29:07.2508|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x1
+2021-02-05 20:29:08.4983|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x2
+2021-02-05 20:29:09.0986|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x3
+2021-02-05 20:29:10.4311|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x2
+2021-02-05 20:29:10.9439|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x1
+2021-02-05 20:29:11.8848|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x2
+2021-02-05 20:29:12.3262|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку x3
+2021-02-05 20:29:22.1043|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку D
+2021-02-05 20:29:22.1292|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку D
+2021-02-05 20:29:53.6462|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку E
+2021-02-05 20:29:53.6691|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку E
+2021-02-05 20:30:08.2467|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White;Black;True;True
+2021-02-05 20:31:16.8716|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавили парковку S
+2021-02-05 20:31:16.8965|INFO|WindowsFormsAppAircraftcarrier.FormParking|Перешли на парковку S
+2021-02-05 20:31:21.4691|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;Red
+2021-02-05 20:31:31.8054|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-05 20:31:34.7165|INFO|WindowsFormsAppAircraftcarrier.FormParking|Добавлена Ship100;100;White
+2021-02-05 20:31:38.2880|WARN|WindowsFormsAppAircraftcarrier.FormParking|Не найден ship по месту 4

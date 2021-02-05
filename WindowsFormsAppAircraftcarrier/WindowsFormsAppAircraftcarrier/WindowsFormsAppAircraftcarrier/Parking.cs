@@ -45,7 +45,7 @@ namespace WindowsFormsAppAircraftcarrier
         {
             if (p.places.Count >= p.maxCount)
             {
-                return false;
+                throw new ParkingOverflowException("Переполнено");
             }
             p.places.Add(Ship);
             return true;
@@ -55,7 +55,7 @@ namespace WindowsFormsAppAircraftcarrier
         {
             if (index < -1 || index > p.places.Count)
             {
-                return null;
+                throw new ParkingNotFoundException(index);
             }
             T car = p.places[index];
             p.places.RemoveAt(index);
@@ -66,7 +66,7 @@ namespace WindowsFormsAppAircraftcarrier
             DrawMarking(g);
             for (int i = 0; i < places.Count; i++)
             {
-                places[i].SetPosition(3 + i / 3 * placeSizeWidth + 3, i % 3 * placeSizeHeight + 15, pictureWidth, pictureHeight);
+                places[i].SetPosition(5 + i / 3 * placeSizeWidth + 5, i % 3 * placeSizeHeight + 15, pictureWidth, pictureHeight);
                 places[i]?.Drawship(g);
             }
         }
@@ -82,7 +82,6 @@ namespace WindowsFormsAppAircraftcarrier
                 }
                 g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
             }
-
         }
         public T GetNext(int index)
         {

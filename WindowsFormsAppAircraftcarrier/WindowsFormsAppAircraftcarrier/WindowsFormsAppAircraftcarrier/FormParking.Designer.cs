@@ -32,12 +32,12 @@
             this.Warship = new System.Windows.Forms.Button();
             this.group_ship = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox = new System.Windows.Forms.TextBox();
+            this.placeparking = new System.Windows.Forms.TextBox();
             this.bTake = new System.Windows.Forms.Button();
             this.listBoxParkings = new System.Windows.Forms.ListBox();
             this.Delete = new System.Windows.Forms.Button();
-            this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
-            this.buttonAddParking_Click = new System.Windows.Forms.Button();
+            this.Nameparking = new System.Windows.Forms.TextBox();
+            this.Add = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +55,13 @@
             this.boxParkimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.boxParkimg.Location = new System.Drawing.Point(0, 24);
             this.boxParkimg.Name = "boxParkimg";
-            this.boxParkimg.Size = new System.Drawing.Size(1155, 674);
+            this.boxParkimg.Size = new System.Drawing.Size(1158, 674);
             this.boxParkimg.TabIndex = 0;
             this.boxParkimg.TabStop = false;
             // 
             // Warship
             // 
-            this.Warship.Location = new System.Drawing.Point(942, 80);
+            this.Warship.Location = new System.Drawing.Point(944, 81);
             this.Warship.Name = "Warship";
             this.Warship.Size = new System.Drawing.Size(202, 69);
             this.Warship.TabIndex = 1;
@@ -72,11 +72,11 @@
             // group_ship
             // 
             this.group_ship.Controls.Add(this.label1);
-            this.group_ship.Controls.Add(this.maskedTextBox);
+            this.group_ship.Controls.Add(this.placeparking);
             this.group_ship.Controls.Add(this.bTake);
-            this.group_ship.Location = new System.Drawing.Point(942, 169);
+            this.group_ship.Location = new System.Drawing.Point(944, 156);
             this.group_ship.Name = "group_ship";
-            this.group_ship.Size = new System.Drawing.Size(202, 181);
+            this.group_ship.Size = new System.Drawing.Size(202, 216);
             this.group_ship.TabIndex = 2;
             this.group_ship.TabStop = false;
             this.group_ship.Text = "the  Ship";
@@ -90,16 +90,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Place: ";
             // 
-            // maskedTextBox
+            // placeparking
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(77, 88);
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(43, 20);
-            this.maskedTextBox.TabIndex = 1;
+            this.placeparking.Location = new System.Drawing.Point(77, 88);
+            this.placeparking.Name = "placeparking";
+            this.placeparking.Size = new System.Drawing.Size(43, 20);
+            this.placeparking.TabIndex = 1;
             // 
             // bTake
             // 
-            this.bTake.Location = new System.Drawing.Point(63, 133);
+            this.bTake.Location = new System.Drawing.Point(66, 146);
             this.bTake.Name = "bTake";
             this.bTake.Size = new System.Drawing.Size(86, 42);
             this.bTake.TabIndex = 0;
@@ -110,7 +110,7 @@
             // listBoxParkings
             // 
             this.listBoxParkings.FormattingEnabled = true;
-            this.listBoxParkings.Location = new System.Drawing.Point(938, 482);
+            this.listBoxParkings.Location = new System.Drawing.Point(944, 487);
             this.listBoxParkings.Name = "listBoxParkings";
             this.listBoxParkings.Size = new System.Drawing.Size(206, 95);
             this.listBoxParkings.TabIndex = 3;
@@ -118,7 +118,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(942, 583);
+            this.Delete.Location = new System.Drawing.Point(947, 588);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(199, 34);
             this.Delete.TabIndex = 4;
@@ -126,27 +126,27 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.DelParking_Click);
             // 
-            // textBoxNewLevelName
+            // Nameparking
             // 
-            this.textBoxNewLevelName.Location = new System.Drawing.Point(960, 402);
-            this.textBoxNewLevelName.Name = "textBoxNewLevelName";
-            this.textBoxNewLevelName.Size = new System.Drawing.Size(142, 20);
-            this.textBoxNewLevelName.TabIndex = 5;
+            this.Nameparking.Location = new System.Drawing.Point(982, 422);
+            this.Nameparking.Name = "Nameparking";
+            this.Nameparking.Size = new System.Drawing.Size(142, 20);
+            this.Nameparking.TabIndex = 5;
             // 
-            // buttonAddParking_Click
+            // Add
             // 
-            this.buttonAddParking_Click.Location = new System.Drawing.Point(942, 443);
-            this.buttonAddParking_Click.Name = "buttonAddParking_Click";
-            this.buttonAddParking_Click.Size = new System.Drawing.Size(190, 33);
-            this.buttonAddParking_Click.TabIndex = 6;
-            this.buttonAddParking_Click.Text = "Add";
-            this.buttonAddParking_Click.UseVisualStyleBackColor = true;
-            this.buttonAddParking_Click.Click += new System.EventHandler(this.AddParking_Click);
+            this.Add.Location = new System.Drawing.Point(962, 448);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(190, 33);
+            this.Add.TabIndex = 6;
+            this.Add.Text = "Add";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.AddParking_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1028, 374);
+            this.label2.Location = new System.Drawing.Point(1019, 394);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 7;
@@ -158,7 +158,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1155, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1158, 24);
             this.menuStrip.TabIndex = 8;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -198,10 +198,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 698);
+            this.ClientSize = new System.Drawing.Size(1158, 698);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonAddParking_Click);
-            this.Controls.Add(this.textBoxNewLevelName);
+            this.Controls.Add(this.Add);
+            this.Controls.Add(this.Nameparking);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.listBoxParkings);
             this.Controls.Add(this.group_ship);
@@ -228,11 +228,11 @@
         private System.Windows.Forms.GroupBox group_ship;
         private System.Windows.Forms.Button bTake;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox maskedTextBox;
+        private System.Windows.Forms.TextBox placeparking;
         private System.Windows.Forms.ListBox listBoxParkings;
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.TextBox textBoxNewLevelName;
-        private System.Windows.Forms.Button buttonAddParking_Click;
+        private System.Windows.Forms.TextBox Nameparking;
+        private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;

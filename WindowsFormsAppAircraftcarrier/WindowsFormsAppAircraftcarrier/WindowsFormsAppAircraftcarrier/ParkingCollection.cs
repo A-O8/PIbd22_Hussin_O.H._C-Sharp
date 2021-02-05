@@ -9,6 +9,7 @@ namespace WindowsFormsAppAircraftcarrier
     class ParkingCollection
     {
 		readonly Dictionary<string, Parking<WaterITransport>> parkingStages;
+
 		/// Возвращение списка названий праковок
 		public List<string> Keys => parkingStages.Keys.ToList();
 		private readonly int pictureWidth;
@@ -36,7 +37,6 @@ namespace WindowsFormsAppAircraftcarrier
 				parkingStages.Remove(name);
 			}
 		}
-        /// Доступ к парковке
 		public Parking<WaterITransport> this[string ind]
 		{
 			get
@@ -46,10 +46,9 @@ namespace WindowsFormsAppAircraftcarrier
 					return parkingStages[ind];
 				}
 				return null;
-
             }
         }
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -82,14 +81,13 @@ namespace WindowsFormsAppAircraftcarrier
                         }
                     }
                 }
-            }
-            return true;
+            }  
         }
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             using (StreamReader sr = new StreamReader(filename, Encoding.UTF8))
             {
@@ -97,22 +95,18 @@ namespace WindowsFormsAppAircraftcarrier
                 string key = string.Empty;
                 if (line.Contains("ParkingCollection"))
                 {
-                    //очищаем записи
                     parkingStages.Clear();
                 }
                 else
                 {
                     //если нет такой записи, то это не те данные
-                    return false;
+                    throw new FormatException("Неверный формат файла");
                 }
                 while ((line = sr.ReadLine()) != null)
                 {
                     Ship ship = null;
-
-                    //идем по считанным записям
                     if (line.Contains("Parking"))
                     {
-                        //начинаем новую парковку
                         key = line.Split(separator)[1];
                         parkingStages.Add(key, new Parking<WaterITransport>(pictureWidth, pictureHeight));
                         continue;
@@ -132,12 +126,10 @@ namespace WindowsFormsAppAircraftcarrier
                     var result = parkingStages[key] + ship;
                     if (!result)
                     {
-                        return false;
+                        throw new ParkingOverflowException("Не удалось загрузить ship на парковку");
                     }
                 }
             }
-            return true;
         }
-
     }
 }
